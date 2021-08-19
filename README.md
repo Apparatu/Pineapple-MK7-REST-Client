@@ -29,7 +29,27 @@ In "./payloads/" you will find :
 
 __RECON__
 
+- access-points_clients.rb
+>
+>
+>
+
+- clients-probes.rb
+>
+>
+>
+
 __EXPLOITATION__
+
+- rogue-access-points.rb
+>
+>
+>
+
+- twin-access-points.rb
+>
+>
+>
 
 ## Payload skeleton for development
 

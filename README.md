@@ -30,18 +30,18 @@ In "./payloads/" you will find :
 __RECON__
 
 - access-points_clients.rb
-> Retrieves the list of access points and clients, associated or not
+> Retrieves the list of access points and clients, associated or not.
 
 - clients-probes.rb
->
+> Retrieves lists of probe requests issued by clients.
 
 __EXPLOITATION__
 
 - rogue-access-points.rb
->
+> From a list, broadcast SSIDs and retrieve the list of clients associated with one of them.
 
 - twin-access-points.rb
->
+> Observe access points and associated clients, broadcast SSIDs with a similar name and then disconnect the clients.
 
 ## Payload skeleton for development
 

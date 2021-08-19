@@ -30,25 +30,17 @@ In "./payloads/" you will find :
 __RECON__
 
 - access-points_clients.rb
->
->
->
+> Retrieves the list of access points and clients, associated or not
 
 - clients-probes.rb
->
->
 >
 
 __EXPLOITATION__
 
 - rogue-access-points.rb
 >
->
->
 
 - twin-access-points.rb
->
->
 >
 
 ## Payload skeleton for development
@@ -98,6 +90,8 @@ else
     
 end
 ```
+
+__Note :__ Don't hesitate to take inspiration from the payloads.
 
 ## System modules
 

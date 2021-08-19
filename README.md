@@ -34,7 +34,49 @@ __EXPLOITATION__
 ## Payload skeleton for development
 
 ```ruby
+require_relative('<PATH-TO>/classes/PineappleMK7.rb')
 
+system_authentication = PineappleMK7::System::Authentication.new
+system_authentication.host = "<PINEAPPLE-IP-ADDRESS>"
+system_authentication.port = 1471
+system_authentication.mac = "<PINEAPPLE-MAC-ADDRESS>"
+system_authentication.password = "<ROOT-ACCOUNT-PASSWORD>"
+
+if (system_authentication.login)
+
+    led = PineappleMK7::System::LED.new
+
+    # SETUP
+    #
+    led.setup
+
+    # ATTACK
+    #
+    led.attack
+
+    # SPECIAL
+    #
+    led.special
+
+    # FINISH
+    #
+    led.finish
+
+    # CLEANUP
+    #
+    led.cleanup
+
+    # OFF
+    #
+    led.off
+
+else
+
+    # FAILED
+    #
+    led.failed
+    
+end
 ```
 
 ## System modules
@@ -44,10 +86,10 @@ __EXPLOITATION__
 ```ruby
 system_authentication = PineappleMK7::System::Authentication.new
 
-system_authentication.host = "<PINEAPPLE-IP-ADDRESS>"
-system_authentication.port = 1471
-system_authentication.mac = "<PINEAPPLE-MAC-ADDRESS>"
-system_authentication.password = "<ROOT-ACCOUNT-PASSWORD>"
+system_authentication.host = (string) "<PINEAPPLE-IP-ADDRESS>"
+system_authentication.port = (integer) 1471
+system_authentication.mac = (string) "<PINEAPPLE-MAC-ADDRESS>"
+system_authentication.password = (string) "<ROOT-ACCOUNT-PASSWORD>"
 
 system_authentication.login()
 ```
@@ -143,6 +185,9 @@ recon_scanning = PineappleMK7::Modules::Recon::Scanning.new
 
 recon_scan = recon_scanning.start( (integer) scan_time )
 recon_output = recon_scanning.output( (integer) recon_scan.scanID )
+
+ap = recon_output[0]
 recon_scanning.deauth_ap( (object) ap )
+
 recon_scanning.delete( (integer) recon_scan.scanID )
 ```

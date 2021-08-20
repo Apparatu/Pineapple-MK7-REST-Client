@@ -145,10 +145,10 @@ pineap_clients.clear_previous()
 ```ruby
 pineap_filtering = PineappleMK7::Modules::PineAP::Filtering.new
 
-pineap_filtering.client_filter( (string) "allow" | "deny" )
+pineap_filtering.client_filter( (string) 'allow' | 'deny' )
 pineap_filtering.add_client( (string) mac )
 pineap_filtering.clear_clients()
-pineap_filtering.ssid_filter( (string) "allow" | "deny" )
+pineap_filtering.ssid_filter( (string) 'allow' | 'deny' )
 ```
 
 #### Settings accessors/methods

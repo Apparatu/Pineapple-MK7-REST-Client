@@ -14,8 +14,7 @@
 >
 > __Doc__::         https://hak5.github.io/mk7-docs/docs/rest/rest/
 >
-> __Requires__::    ruby >= 2.7.0, rest-client 2.1.0 gem, net-ssh 6.1.0 gem
->
+> __Requires__::    ruby >= 2.7.0, rest-client 2.1.0 gem, net-ssh 6.1.0 gem 
 >                   and Pineapple Mark VII Firmware v1.1.0-stable
 >  
 >

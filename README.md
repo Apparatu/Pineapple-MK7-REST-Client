@@ -37,7 +37,7 @@ In *"./payloads/"* directory, you will find :
 | rogue-access-points.rb | TW-D |
 | twin-access-points.rb | TW-D |
 
-| RECON | Description |
+| RECON | Author |
 | --- | --- |
 | access-points_clients.rb | TW-D |
 | clients-probes.rb | TW-D |

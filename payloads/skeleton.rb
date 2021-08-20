@@ -34,10 +34,4 @@ if (system_authentication.login)
     #
     led.off
 
-else
-
-    # FAILED
-    #
-    led.failed
-    
 end

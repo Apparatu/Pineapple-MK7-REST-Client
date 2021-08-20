@@ -1,12 +1,16 @@
 module M_Scanning
 
+    private def convert_encryption(encryption)
+        #
+    end
+
     public def start(scan_time)
         response = self.call(
             'POST',
             'recon/start',
             {
                 "live" => false,
-                "scan_time" => scan_time,
+                "scan_time" => (scan_time === 0) ? 30 : scan_time,
                 "band" => "0"
             },
             '{"scanRunning":true,"scanID":'   
@@ -16,12 +20,16 @@ module M_Scanning
     end
 
     public def output(scanID)
-        self.call(
+        response = self.call(
             'GET',
             ('recon/scans/' + scanID.to_s()),
             '',
             '{"APResults":['
         )
+        response.APResults = (response.APResults.nil? ? [] : response.APResults)
+        response.UnassociatedClientResults = (response.UnassociatedClientResults.nil? ? [] : response.UnassociatedClientResults)
+        response.OutOfRangeClientResults = (response.OutOfRangeClientResults.nil? ? [] : response.OutOfRangeClientResults)
+        return(response)
     end
 
     public def deauth_ap(ap)

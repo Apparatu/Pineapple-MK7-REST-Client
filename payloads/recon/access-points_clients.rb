@@ -19,7 +19,7 @@ if (system_authentication.login)
     pineap_settings.save
 
     recon_scanning = PineappleMK7::Modules::Recon::Scanning.new
-    SCAN_TIME = 60
+    SCAN_TIME = 120
 
     logging_activity = PineappleMK7::Modules::Logging::Activity.new
 
@@ -34,21 +34,18 @@ if (system_authentication.login)
     #
     led.special
     
-    puts('[+] AP Results')
-    apResults = (output.APResults.nil? ? [] : output.APResults)
-    apResults.each do |ap|
+    puts('[+] Access Points and Clients')
+    output.APResults.each do |ap|
         pp(ap)
     end
 
-    puts('[+] Out Of Range Client Results')
-    outOfRangeClientResults = (output.OutOfRangeClientResults.nil? ? [] : output.OutOfRangeClientResults)
-    outOfRangeClientResults.each do |client|
+    puts('[+] Unassociated Clients')
+    output.UnassociatedClientResults.each do |client|
         pp(client)
     end
 
-    puts('[+] Unassociated Client Results')
-    unassociatedClientResults = (output.UnassociatedClientResults.nil? ? [] : output.UnassociatedClientResults)
-    unassociatedClientResults.each do |client|
+    puts('[+] Out-of-Range Clients')
+    output.OutOfRangeClientResults.each do |client|
         pp(client)
     end
 
@@ -69,11 +66,5 @@ if (system_authentication.login)
     # OFF
     #
     led.off
-
-else
-
-    # FAILED
-    #
-    led.failed
-    
+  
 end

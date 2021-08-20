@@ -16,7 +16,7 @@ module M_LED
 
         rescue Exception => exception
 
-            abort(exception)
+            abort('System::LED => ' + exception.message)
 
         end
 

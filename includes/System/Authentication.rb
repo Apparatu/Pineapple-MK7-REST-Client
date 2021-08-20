@@ -24,7 +24,7 @@ module M_Authentication
 
         rescue Exception => exception
 
-            abort(exception.message)
+            abort('System::Authentication => ' + exception.message)
 
         else
 

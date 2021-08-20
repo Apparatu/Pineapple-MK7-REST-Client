@@ -6,7 +6,7 @@
 
 > __Author__::      TW-D
 >
-> __Version__::     1.2.0
+> __Version__::     1.2.1
 >
 > __Copyright__::   Copyright (c) 2021 TW-D
 >
@@ -14,7 +14,8 @@
 >
 > __Doc__::         https://hak5.github.io/mk7-docs/docs/rest/rest/
 >
-> __Requires__::    ruby >= 2.7.0, rest-client 2.1.0 gem, net-ssh 6.1.0 gem and Pineapple Mark VII Firmware v1.1.0-stable
+> __Requires__::    ruby >= 2.7.0, rest-client 2.1.0 gem, net-ssh 6.1.0 gem 
+>                   and Pineapple Mark VII Firmware v1.1.0-stable
 >  
 >
 > __Installation__::
@@ -23,25 +24,23 @@
 >
 > * sudo gem install rest-client net-ssh
 
+## Description
+
+Coming soon.
+
 ## Payloads
 
-In "./payloads/" you will find :
-
-__RECON__
-
-- access-points_clients.rb
-> Retrieves the list of access points and clients, associated or not.
-
-- clients-probes.rb
-> Retrieves lists of probe requests issued by clients.
+In *"./payloads/"* directory, you will find :
 
 __EXPLOITATION__
 
 - rogue-access-points.rb
-> From a list, broadcast SSIDs and retrieve the list of clients associated with one of them.
-
 - twin-access-points.rb
-> Observe access points and associated clients, broadcast SSIDs with a similar name and then disconnect the clients.
+
+__RECON__
+
+- access-points_clients.rb
+- clients-probes.rb
 
 ## Payload skeleton for development
 
@@ -91,7 +90,7 @@ else
 end
 ```
 
-__Note :__ Don't hesitate to take inspiration from the payloads.
+__Note :__ *Don't hesitate to take inspiration from the payloads directory.*
 
 ## System modules
 
@@ -189,7 +188,11 @@ pineap_settings.clear_pool()
 #### Handshakes methods
 
 ```ruby
+recon_handshakes = PineappleMK7::Modules::Recon::Handshakes.new
 
+recon_handshakes.start( (object) ap )
+recon_handshakes.stop()
+recon_handshakes.output()
 ```
 
 #### Scanning methods
@@ -197,11 +200,8 @@ pineap_settings.clear_pool()
 ```ruby
 recon_scanning = PineappleMK7::Modules::Recon::Scanning.new
 
-recon_scan = recon_scanning.start( (integer) scan_time )
-recon_output = recon_scanning.output( (integer) recon_scan.scanID )
-
-ap = recon_output[0]
+recon_scanning.start( (integer) scan_time )
+recon_scanning.output( (integer) scanID )
 recon_scanning.deauth_ap( (object) ap )
-
-recon_scanning.delete( (integer) recon_scan.scanID )
+recon_scanning.delete( (integer) scanID )
 ```

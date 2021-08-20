@@ -2,7 +2,7 @@
 
 - The leading rogue access point and WiFi pentest toolkit for close access operations.
 - Passive and active attacks analyze vulnerable and misconfigured devices. 
-- (__@HAK5__)[https://hak5.org/collections/sale/products/wifi-pineapple]
+- https://hak5.org/collections/sale/products/wifi-pineapple
 
 > __Author__::      TW-D
 >

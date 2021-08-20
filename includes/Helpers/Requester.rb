@@ -26,6 +26,7 @@ module Requester
 
             if (body.include?(confirm))
 
+                puts('[debug] ' + method + ' ' + uri)
                 return(JSON.parse(body, object_class: OpenStruct))
             
             else

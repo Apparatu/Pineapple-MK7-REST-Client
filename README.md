@@ -32,15 +32,15 @@ Coming soon.
 
 In *"./payloads/"* directory, you will find :
 
-__EXPLOITATION__
+| EXPLOITATION | Description |
+| --- | --- |
+| rogue-access-points.rb | Coming soon. |
+| twin-access-points.rb | Coming soon. |
 
-- rogue-access-points.rb
-- twin-access-points.rb
-
-__RECON__
-
-- access-points_clients.rb
-- clients-probes.rb
+| RECON | Description |
+| --- | --- |
+| access-points_clients.rb | Coming soon. |
+| clients-probes.rb | Coming soon. |
 
 ## Payload skeleton for development
 
